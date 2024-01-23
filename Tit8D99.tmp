@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://usvq1v2grttr"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_3ikk3"]
+[ext_resource type="Theme" uid="uid://baw3uvd2gak5n" path="res://Main.tres" id="1_i0fwu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4fbg2"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ikk3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8, 16.24)
+texture = SubResource("CanvasTexture_4fbg2")
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 732.0
+offset_top = 400.0
+offset_right = 770.0
+offset_bottom = 423.0
+scale = Vector2(9, 9)
+theme = ExtResource("1_i0fwu")
+text = "Quit"
+
+[node name="Start" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 400.0
+offset_right = 70.0
+offset_bottom = 423.0
+scale = Vector2(9, 9)
+theme = ExtResource("1_i0fwu")
+text = "Start"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
