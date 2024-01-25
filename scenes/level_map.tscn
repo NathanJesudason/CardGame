@@ -77,3 +77,7 @@ disabled = true
 [connection signal="mouse_exited" from="HBoxContainer/Stage1" to="." method="_on_stage_1_mouse_exited"]
 [connection signal="mouse_entered" from="HBoxContainer/Stage2" to="." method="_on_stage_2_mouse_entered"]
 [connection signal="mouse_exited" from="HBoxContainer/Stage2" to="." method="_on_stage_2_mouse_exited"]
+[connection signal="mouse_entered" from="HBoxContainer/Stage3" to="." method="_on_stage_3_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/Stage3" to="." method="_on_stage_3_mouse_exited"]
+[connection signal="mouse_entered" from="HBoxContainer/Stage4" to="." method="_on_stage_4_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/Stage4" to="." method="_on_stage_4_mouse_exited"]
