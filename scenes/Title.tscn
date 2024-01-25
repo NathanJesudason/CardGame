@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3jwsupfgj28b"]
+[gd_scene load_steps=3 format=3 uid="uid://b3jwsupfgj28b"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_50l2m"]
 [ext_resource type="Theme" uid="uid://baw3uvd2gak5n" path="res://resources/Main.tres" id="2_ovj65"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_4fbg2"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,12 +12,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_50l2m")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(28.8, 16.24)
-texture = SubResource("CanvasTexture_4fbg2")
+scale = Vector2(28.72, 16.28)
+color = Color(0.486275, 0.2, 0.27451, 1)
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
