@@ -37,6 +37,7 @@ func _ready():
 func drawCard(): 
 	if playerDeckSize > 0 and playerHandSize < 5:
 		var drawnCardIdD = playerDeck.pop_front()
+		#TODO: connect this with the updated card scripts
 		var newCard = cardTemplate.instantiate()
 		
 		playerDeckSize -= 1
