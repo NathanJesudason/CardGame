@@ -12,12 +12,12 @@ const punsPlayerDeck = [11, 13, 15, 17, 19, 22, 26, 30, 4, 8]
 const observationalPlayerDeck = [21, 23, 25, 27, 29, 2, 6, 10, 14, 18]
 
 # since rivals only have five cards, they don't need decks and we can just set their hands as const
-# each rival has 3 cards from their primary specialty (values 2, 4, 5)
+# each rival has 3 cards from their primary specialty (values 1, 4, 5)
 # 1 card (value 3) from the deck that is neutral vs. their specialty
-# and 1 card (value 1) from the deck that is stronger vs. their specialty
-const phsyicalRival = [4, 8, 10, 15, 21]
-const punsRival = [14, 18, 20, 25, 1]
-const observationalRival = [24, 28, 30, 5, 11]
+# and 1 card (value 2) from the deck that is stronger vs. their specialty
+const phsyicalRival = [2, 8, 10, 15, 23]
+const punsRival = [12, 18, 20, 25, 3]
+const observationalRival = [22, 28, 30, 5, 13]
 
 var selectedDeck
 var playerDeck = []
