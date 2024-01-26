@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpxexi34qf2xj"]
+
+[ext_resource type="Script" path="res://scripts/PlayScene.gd" id="1_1rtgc"]
+[ext_resource type="Texture2D" uid="uid://ujw50nnbgm5i" path="res://resources/sketch_stage.png" id="2_f251t"]
+[ext_resource type="PackedScene" uid="uid://5dcn0pmdlnq5" path="res://scenes/CardTemplate.tscn" id="3_hmgs5"]
+
+[node name="PlayScene" type="Node2D"]
+script = ExtResource("1_1rtgc")
+
+[node name="SketchStage" type="Sprite2D" parent="."]
+position = Vector2(574, 323)
+scale = Vector2(0.71537, 0.71537)
+texture = ExtResource("2_f251t")
+
+[node name="Hand" type="Node2D" parent="."]
+
+[node name="HandCard1" parent="Hand" instance=ExtResource("3_hmgs5")]
+offset_left = 321.0
+offset_top = 471.0
+offset_right = 445.0
+offset_bottom = 646.0
+
+[node name="HandCard2" parent="Hand" instance=ExtResource("3_hmgs5")]
+offset_left = 437.0
+offset_top = 469.0
+offset_right = 561.0
+offset_bottom = 644.0
+
+[node name="HandCard3" parent="Hand" instance=ExtResource("3_hmgs5")]
+offset_left = 557.0
+offset_top = 445.0
+offset_right = 681.0
+offset_bottom = 620.0
+
+[node name="HandCard4" parent="Hand" instance=ExtResource("3_hmgs5")]
+offset_left = 678.0
+offset_top = 468.0
+offset_right = 802.0
+offset_bottom = 643.0
+
+[node name="LastPlayed" type="Node2D" parent="."]
+
+[node name="LastCard3" parent="LastPlayed" instance=ExtResource("3_hmgs5")]
+unique_name_in_owner = true
+offset_left = 296.0
+offset_top = 64.0
+offset_right = 420.0
+offset_bottom = 239.0
+
+[node name="LastCard2" parent="LastPlayed" instance=ExtResource("3_hmgs5")]
+unique_name_in_owner = true
+offset_left = 431.0
+offset_top = 61.0
+offset_right = 555.0
+offset_bottom = 236.0
+
+[node name="LastCard1" parent="LastPlayed" instance=ExtResource("3_hmgs5")]
+unique_name_in_owner = true
+offset_left = 574.0
+offset_top = 62.0
+offset_right = 698.0
+offset_bottom = 237.0
+
+[node name="NextCard" parent="LastPlayed" instance=ExtResource("3_hmgs5")]
+offset_left = 731.0
+offset_top = 65.0
+offset_right = 855.0
+offset_bottom = 240.0
+
+[node name="PlayerScore" type="Label" parent="."]
+offset_left = 41.0
+offset_top = 27.0
+offset_right = 81.0
+offset_bottom = 50.0
+text = "Your Score: 0"
+
+[node name="RivalScore" type="Label" parent="."]
+offset_left = 41.0
+offset_top = 65.0
+offset_right = 154.0
+offset_bottom = 91.0
+text = "Rival Score: 0"
+
+[node name="StageStatus" type="Label" parent="."]
+offset_left = 41.0
+offset_top = 103.0
+offset_right = 154.0
+offset_bottom = 129.0
+text = "Rounds Left: 5"
+
+[connection signal="gui_input" from="Hand/HandCard1" to="." method="_on_hand_card_1_gui_input"]
+[connection signal="gui_input" from="Hand/HandCard2" to="." method="_on_hand_card_2_gui_input"]
+[connection signal="gui_input" from="Hand/HandCard3" to="." method="_on_hand_card_3_gui_input"]
+[connection signal="gui_input" from="Hand/HandCard4" to="." method="_on_hand_card_4_gui_input"]
