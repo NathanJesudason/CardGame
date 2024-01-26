@@ -29,3 +29,15 @@ func _on_stage_4_mouse_entered():
 
 func _on_stage_4_mouse_exited():
 	stage_description.text = "Select a venue!"
+
+func _on_stage_1_pressed():
+	get_node(".").hide()
+	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
+
+func _on_stage_2_pressed():
+	get_node(".").hide()
+	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
+
+func _on_stage_3_pressed():
+	get_node(".").hide()
+	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
