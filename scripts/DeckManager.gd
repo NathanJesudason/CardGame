@@ -41,7 +41,7 @@ func drawCard():
 		var newCard = cardTemplate.instantiate()
 		
 		playerDeckSize -= 1
-		playerHand.insert([].size(), drawnCardIdD)
+		playerHand.insert(playerHand.size(), drawnCardIdD)
 		playerHandSize += 1
 	
 
