@@ -2,6 +2,9 @@ extends Node2D
 
 var stage_description
 
+@onready var Decks = preload("res://scripts/DeckManager.gd")
+@onready var GlobalState = get_node("/root/GameState")
+
 func _ready():
 	stage_description = %StageDescription
 	stage_description.text = "Select a venue!"
@@ -32,12 +35,24 @@ func _on_stage_4_mouse_exited():
 
 func _on_stage_1_pressed():
 	get_node(".").hide()
+	GlobalState.currentRivalDeck = Decks.phsyicalRival
 	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
 
 func _on_stage_2_pressed():
 	get_node(".").hide()
+	GlobalState.currentRivalDeck = Decks.punsPlayerDeck
 	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
 
 func _on_stage_3_pressed():
 	get_node(".").hide()
+	GlobalState.currentRivalDeck = Decks.punsRival
 	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
+
+func _on_option_button_item_selected(index):
+	match index:
+		0:
+			GlobalState.currentPlayerDeck = Decks.physicalPlayerDeck
+		1:
+			GlobalState.currentPlayerDeck = Decks.observationalPlayerDeck
+		2: 
+			GlobalState.currentPlayerDeck = Decks.punsPlayerDeck

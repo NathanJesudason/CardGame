@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btlkwmpidmo32"
-path="res://.godot/imported/card-back.png-40ff6ae9da2b667aea89c0e7b7b893b4.ctex"
+uid="uid://m8pgakurf3ia"
+path="res://.godot/imported/globe.png-d9e7e6f13c243792d75741a289aee3a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/pixel-cards/card-back.png"
-dest_files=["res://.godot/imported/card-back.png-40ff6ae9da2b667aea89c0e7b7b893b4.ctex"]
+source_file="res://resources/pixel-cards/globe.png"
+dest_files=["res://.godot/imported/globe.png-d9e7e6f13c243792d75741a289aee3a8.ctex"]
 
 [params]
 
