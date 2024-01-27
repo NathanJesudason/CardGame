@@ -15,8 +15,17 @@ func set_card(id):
 	if(!cardTemplate):
 		return
 	cardID = id
-	$Bars/JokeText/CenterContainer/JokeLabel.text = cardTemplate.jokeText
-	$Bars/Name/CenterContainer/NameLabel.text = cardTemplate.cardName
-	$Bars/Type/CenterContainer/TypeLabel.text = cardTemplate.typeText
 	pointValue = cardTemplate.pointValue
 	cardType = cardTemplate.cardType
+	var borderImage = str("res://resources/pixel-cards/card-frame-", cardType,".png")
+	var cardIcon = str("res://resources/pixel-cards/", cardType,"-icon.png")
+	
+	$Border.texture = load(borderImage)
+	$Bars/JokeBar/JokeText/CenterContainer/JokeLabel.text = cardTemplate.jokeText
+	$Bars/Name/CenterContainer/NameLabel.text = cardTemplate.cardName
+	$Bars/TypeBar/Type/CenterContainer/TypeLabel.text = cardTemplate.typeText
+	$Bars/TypeBar/LeftIconBox/CenterContainer/LeftIcon.texture = load(cardIcon)
+	$Bars/TypeBar/RightIconBox/CenterContainer/RightIcon.texture = load(cardIcon)
+	$Bars/BottomBar/CardNumber/CenterContainer/CardNumber.text = str("#", cardID)
+	$Bars/BottomBar/PointValue/CenterContainer/PointValue.text = str(pointValue)
+	
