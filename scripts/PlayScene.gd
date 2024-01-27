@@ -1,5 +1,10 @@
 extends Node2D
 
+@onready var Decks = preload("res://scripts/DeckManager.gd")
+var DeckManager
+
+@onready var GlobalState = get_node("/root/GameState")
+
 var rivalScore = 0
 var playerScore = 0
 var currentCombo = 0
@@ -21,12 +26,19 @@ var LastCardVisibility = [false, false, false]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#HandCards[1].get_children()
-	$Hand/HandCard1.set_card(11)
-	$Hand/HandCard2.set_card(3)
-	$Hand/HandCard3.set_card(21)
-	$Hand/HandCard4.set_card(17)
-	$LastPlayed/NextCard.set_card(randi() % 30 + 1)
+	#instantiate deck manager to access nonstatic functions like shuffling
+	DeckManager = Decks.new()
+	print("Selected DECK")
+	print(GlobalState.currentPlayerDeck)
+	DeckManager.selectedDeck = GlobalState.currentPlayerDeck.duplicate(true)
+	DeckManager.playerDeck = DeckManager.shuffleDeck(DeckManager.selectedDeck)
+	DeckManager.playerDeckSize = DeckManager.playerDeck.size()
+	print(DeckManager.playerDeck)
+	$Hand/HandCard1.set_card(DeckManager.drawCard())
+	$Hand/HandCard2.set_card(DeckManager.drawCard())
+	$Hand/HandCard3.set_card(DeckManager.drawCard())
+	$Hand/HandCard4.set_card(DeckManager.drawCard())
+	$LastPlayed/NextCard.set_card(GlobalState.currentRivalDeck[randi() % GlobalState.currentRivalDeck.size()])
 	%LastCard3.visible = false
 	%LastCard2.visible = false
 	%LastCard1.visible = false
@@ -56,6 +68,8 @@ func play_card(id: int):
 	move_card($LastPlayed/LastCard1, $LastPlayed/LastCard2)
 	move_card(get_node("Hand/HandCard" + str(id)), $LastPlayed/LastCard1)
 	
+	DeckManager.playerHandSize -= 1
+	
 	#Move visibility back one
 	for i in 3:
 		if(LastCardVisibility[i] == false):
@@ -74,7 +88,16 @@ func play_card(id: int):
 	$PlayerScore.text = "Your score: " + str(playerScore)
 	
 	#Replace card in hand based on deck
-	get_node("Hand/HandCard" + str(id)).set_card(randi() % 30 + 1)
+	var newCardID = DeckManager.drawCard()
+	if(newCardID == -1):
+		#Very lazy implementation, but for now just reshuffle and draw a card
+		#TODO: Make it so reshuffling factors in cards in hand
+		DeckManager.selectedDeck = GlobalState.currentPlayerDeck.duplicate(true)
+		DeckManager.playerDeck = DeckManager.shuffleDeck(DeckManager.selectedDeck)
+		DeckManager.playerDeckSize = DeckManager.playerDeck.size()
+		get_node("Hand/HandCard" + str(id)).set_card(DeckManager.drawCard())
+	else:
+		get_node("Hand/HandCard" + str(id)).set_card(newCardID)
 	
 	#end turn 
 	#in the future, we will yield some time for animations while scoring
@@ -102,7 +125,7 @@ func play_rival_card():
 	
 	lastPlayedCardType = $LastPlayed/NextCard.cardType
 	
-	$LastPlayed/NextCard.set_card(randi() % 30 + 1)
+	$LastPlayed/NextCard.set_card(GlobalState.currentRivalDeck[randi() % GlobalState.currentRivalDeck.size()])
 	roundNumber += 1
 	$StageStatus.text = "Rounds Left: " + str(5 - roundNumber)
 	if(roundNumber == 5):

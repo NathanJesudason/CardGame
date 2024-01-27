@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpxexi34qf2xj"]
+[gd_scene load_steps=4 format=3 uid="uid://b02lg3u2ecntd"]
 
 [ext_resource type="Script" path="res://scripts/PlayScene.gd" id="1_1rtgc"]
 [ext_resource type="Texture2D" uid="uid://ujw50nnbgm5i" path="res://resources/sketch_stage.png" id="2_f251t"]

@@ -1,7 +1,7 @@
 extends Node
 
 # load the card tempalte
-const cardTemplate = preload("res://scenes/CardTemplate.tscn")
+#const cardTemplate = preload("res://scenes/CardTemplate.tscn")
 
 # preset player decks that the user can select
 # the decks feature 5 primary cards (values 1-5) based on their specialty
@@ -36,13 +36,19 @@ func _ready():
 
 func drawCard(): 
 	if playerDeckSize > 0 and playerHandSize < 5:
+		print("Drawing new card")
+		print(playerDeck)
 		var drawnCardIdD = playerDeck.pop_front()
+		print(drawnCardIdD)
 		#TODO: connect this with the updated card scripts
-		var newCard = cardTemplate.instantiate()
+		#For now, just grab ints for current PlayScene
+		#var newCard = cardTemplate.instantiate()
 		
 		playerDeckSize -= 1
 		playerHand.insert(playerHand.size(), drawnCardIdD)
 		playerHandSize += 1
+		return drawnCardIdD
+	return -1
 	
 
 func shuffleDeck(deck: Array): 
