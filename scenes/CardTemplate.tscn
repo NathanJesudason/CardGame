@@ -63,7 +63,7 @@ layout_mode = 2
 [node name="LeftIcon" type="Sprite2D" parent="Bars/TypeBar/LeftIconBox/CenterContainer"]
 texture = ExtResource("4_7ta0o")
 centered = false
-offset = Vector2(-5, -1)
+offset = Vector2(-7, -1)
 
 [node name="Type" type="MarginContainer" parent="Bars/TypeBar"]
 layout_mode = 2
@@ -94,7 +94,7 @@ layout_mode = 2
 [node name="RightIcon" type="Sprite2D" parent="Bars/TypeBar/RightIconBox/CenterContainer"]
 texture = ExtResource("4_7ta0o")
 centered = false
-offset = Vector2(-3, -1)
+offset = Vector2(-1, -1)
 
 [node name="RigthtGap" type="MarginContainer" parent="Bars/TypeBar"]
 custom_minimum_size = Vector2(10, 0)
