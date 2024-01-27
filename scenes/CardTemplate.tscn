@@ -80,6 +80,61 @@ theme_override_font_sizes/font_size = 8
 text = "This is the funniest joke
 text you have ever seen"
 
+[node name="LowerGap" type="MarginContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BottomBar" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/BottomBar"]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+
+[node name="CardNumber" type="MarginContainer" parent="Bars/BottomBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar/CardNumber"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/CardNumber"]
+layout_mode = 2
+
+[node name="CardNumber" type="Label" parent="Bars/BottomBar/CardNumber/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_l53m7")
+theme_override_font_sizes/font_size = 8
+text = "#0	"
+
+[node name="MidGap" type="MarginContainer" parent="Bars/BottomBar"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PointValue" type="MarginContainer" parent="Bars/BottomBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/BottomBar/PointValue"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/PointValue"]
+layout_mode = 2
+
+[node name="CardNumber" type="Label" parent="Bars/BottomBar/PointValue/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_l53m7")
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="RightGap" type="MarginContainer" parent="Bars/BottomBar"]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+
 [node name="CardBack" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(3.125, 3.14286)
