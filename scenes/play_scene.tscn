@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b02lg3u2ecntd"]
+[gd_scene load_steps=9 format=3 uid="uid://b02lg3u2ecntd"]
 
 [ext_resource type="Script" path="res://scripts/PlayScene.gd" id="1_1rtgc"]
 [ext_resource type="Texture2D" uid="uid://ujw50nnbgm5i" path="res://resources/sketch_stage.png" id="2_f251t"]
 [ext_resource type="PackedScene" uid="uid://5dcn0pmdlnq5" path="res://scenes/CardTemplate.tscn" id="3_hmgs5"]
 [ext_resource type="PackedScene" uid="uid://bainpk7i352ah" path="res://scenes/audience_member.tscn" id="4_m4ebv"]
+[ext_resource type="AudioStream" uid="uid://busqpagjqlv0o" path="res://resources/audio/Music/clownintroMIXED.wav" id="5_km3hp"]
+[ext_resource type="AudioStream" uid="uid://hlkilotqe5xu" path="res://resources/audio/Music/clownbattle_nointroMIXED.wav" id="6_4si8r"]
+[ext_resource type="AudioStream" uid="uid://cvxi0lgsa8vw7" path="res://resources/audio/sfx/click.wav" id="7_js5xe"]
+[ext_resource type="AudioStream" uid="uid://ctg8jhdp31ybr" path="res://resources/audio/sfx/hitHurt.wav" id="8_bqjee"]
 
 [node name="PlayScene" type="Node2D"]
 script = ExtResource("1_1rtgc")
@@ -192,6 +196,18 @@ position = Vector2(763, 369)
 
 [node name="AudienceMember24" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(833, 369)
+
+[node name="battleintro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_km3hp")
+
+[node name="clownbattle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4si8r")
+
+[node name="playercard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_js5xe")
+
+[node name="rivalcard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bqjee")
 
 [connection signal="gui_input" from="Stage/Hand/HandCard1" to="." method="_on_hand_card_1_gui_input"]
 [connection signal="gui_input" from="Stage/Hand/HandCard2" to="." method="_on_hand_card_2_gui_input"]
