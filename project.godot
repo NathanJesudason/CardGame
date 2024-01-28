@@ -21,6 +21,8 @@ GameState="*res://scripts/game_state.gd"
 
 [display]
 
+window/size/viewport_width=1024
+window/size/viewport_height=896
 window/size/resizable=false
 
 [rendering]
