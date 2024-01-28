@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b02lg3u2ecntd"]
+[gd_scene load_steps=10 format=3 uid="uid://b02lg3u2ecntd"]
 
 [ext_resource type="Script" path="res://scripts/PlayScene.gd" id="1_1rtgc"]
 [ext_resource type="Texture2D" uid="uid://bf6cx4i5uun48" path="res://resources/bg-venue.png" id="2_i6d0c"]
 [ext_resource type="PackedScene" uid="uid://5dcn0pmdlnq5" path="res://scenes/CardTemplate.tscn" id="3_hmgs5"]
 [ext_resource type="PackedScene" uid="uid://bainpk7i352ah" path="res://scenes/audience_member.tscn" id="4_m4ebv"]
+[ext_resource type="Theme" uid="uid://baw3uvd2gak5n" path="res://resources/Main.tres" id="5_3nabk"]
 [ext_resource type="AudioStream" uid="uid://busqpagjqlv0o" path="res://resources/audio/Music/clownintroMIXED.wav" id="5_km3hp"]
 [ext_resource type="AudioStream" uid="uid://hlkilotqe5xu" path="res://resources/audio/Music/clownbattle_nointroMIXED.wav" id="6_4si8r"]
 [ext_resource type="AudioStream" uid="uid://cvxi0lgsa8vw7" path="res://resources/audio/sfx/click.wav" id="7_js5xe"]
@@ -174,49 +175,56 @@ position = Vector2(833, 369)
 
 [node name="AudienceMember31" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(729, 415)
-scale = Vector2(1, 1)
 
 [node name="AudienceMember30" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(660, 415)
-scale = Vector2(1, 1)
 
 [node name="AudienceMember32" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(797, 415)
-scale = Vector2(1, 1)
 
 [node name="AudienceMember29" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(591, 415)
-scale = Vector2(1, 1)
 
 [node name="AudienceMember28" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(522, 415)
-scale = Vector2(1, 1)
 
 [node name="AudienceMember27" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(454, 415)
-scale = Vector2(1, 1)
 
 [node name="AudienceMember26" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(385, 415)
-scale = Vector2(1, 1)
 
 [node name="AudienceMember25" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(317, 414)
-scale = Vector2(1, 1)
+
+[node name="Continue" type="Button" parent="."]
+visible = false
+offset_left = 720.0
+offset_top = 489.0
+offset_right = 943.0
+offset_bottom = 551.0
+theme = ExtResource("5_3nabk")
+theme_override_font_sizes/font_size = 40
+text = "Continue →"
 
 [node name="battleintro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_km3hp")
+volume_db = -10.0
 
 [node name="clownbattle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_4si8r")
+volume_db = -10.0
 
 [node name="playercard" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_js5xe")
+volume_db = -10.0
 
 [node name="rivalcard" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_bqjee")
+volume_db = -10.0
 
 [connection signal="gui_input" from="Stage/Hand/HandCard1" to="." method="_on_hand_card_1_gui_input"]
 [connection signal="gui_input" from="Stage/Hand/HandCard2" to="." method="_on_hand_card_2_gui_input"]
 [connection signal="gui_input" from="Stage/Hand/HandCard3" to="." method="_on_hand_card_3_gui_input"]
 [connection signal="gui_input" from="Stage/Hand/HandCard4" to="." method="_on_hand_card_4_gui_input"]
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

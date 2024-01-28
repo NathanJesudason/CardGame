@@ -126,9 +126,11 @@ disabled = true
 
 [node name="levelselect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_eri6f")
+volume_db = -10.0
 
 [node name="levelbutton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_6f6yq")
+volume_db = -10.0
 
 [connection signal="item_selected" from="PanelContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="mouse_entered" from="HBoxContainer/Stage1" to="." method="_on_stage_1_mouse_entered"]

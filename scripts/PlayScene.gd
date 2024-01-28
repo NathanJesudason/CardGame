@@ -156,6 +156,7 @@ func play_rival_card():
 			$Stage/StageStatus.text = "You win!"
 		else:
 			$Stage/StageStatus.text = "You lose!"
+		$Continue.visible = true
 	else:
 		#end turn 
 		await get_tree().create_timer(1.0).timeout
@@ -193,3 +194,7 @@ func _on_hand_card_4_gui_input(event):
 			$playercard.play()
 			print("Card 4 clicked")
 			play_card(4)
+
+
+func _on_continue_pressed():
+	get_tree().change_scene_to_file("res://scenes/level_map.tscn")
