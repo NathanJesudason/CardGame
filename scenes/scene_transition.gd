@@ -7,8 +7,3 @@ func _ready():
 	animationPlayer.play("Curtains")
 	await animationPlayer.animation_finished
 	self.visible = false
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
