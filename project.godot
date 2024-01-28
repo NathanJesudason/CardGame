@@ -15,6 +15,10 @@ run/main_scene="res://scenes/Title.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://resources/icon.svg"
 
+[autoload]
+
+GameState="*res://scripts/game_state.gd"
+
 [display]
 
 window/size/resizable=false

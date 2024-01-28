@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btlkwmpidmo32"
-path="res://.godot/imported/card-back.png-40ff6ae9da2b667aea89c0e7b7b893b4.ctex"
+uid="uid://bp2siotvr2873"
+path="res://.godot/imported/bomb.png-c700b0a07423f2c0239da764d1a329d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/pixel-cards/card-back.png"
-dest_files=["res://.godot/imported/card-back.png-40ff6ae9da2b667aea89c0e7b7b893b4.ctex"]
+source_file="res://resources/pixel-cards/bomb.png"
+dest_files=["res://.godot/imported/bomb.png-c700b0a07423f2c0239da764d1a329d9.ctex"]
 
 [params]
 

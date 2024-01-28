@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btlkwmpidmo32"
-path="res://.godot/imported/card-back.png-40ff6ae9da2b667aea89c0e7b7b893b4.ctex"
+uid="uid://d0eepvk8y3wut"
+path="res://.godot/imported/cheese.png-7b6756ab119e89f314f74b43f112c970.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/pixel-cards/card-back.png"
-dest_files=["res://.godot/imported/card-back.png-40ff6ae9da2b667aea89c0e7b7b893b4.ctex"]
+source_file="res://resources/pixel-cards/cheese.png"
+dest_files=["res://.godot/imported/cheese.png-7b6756ab119e89f314f74b43f112c970.ctex"]
 
 [params]
 
