@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpljxv55ms5cy"]
+[gd_scene load_steps=6 format=3 uid="uid://cpljxv55ms5cy"]
 
 [ext_resource type="Script" path="res://scripts/level_map.gd" id="1_2mbpv"]
 [ext_resource type="Theme" uid="uid://baw3uvd2gak5n" path="res://resources/Main.tres" id="1_anfl0"]
 [ext_resource type="FontFile" uid="uid://dmw35ibqh0v47" path="res://resources/Pixelme.ttf" id="3_7rphq"]
+[ext_resource type="AudioStream" uid="uid://brtcn1aftoad6" path="res://resources/audio/Music/roundstart.mp3" id="4_eri6f"]
+[ext_resource type="AudioStream" uid="uid://cvxi0lgsa8vw7" path="res://resources/audio/sfx/click.wav" id="5_6f6yq"]
 
 [node name="LevelMap" type="Node2D"]
 script = ExtResource("1_2mbpv")
@@ -121,6 +123,12 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("1_anfl0")
 disabled = true
+
+[node name="levelselect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_eri6f")
+
+[node name="levelbutton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6f6yq")
 
 [connection signal="item_selected" from="PanelContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="mouse_entered" from="HBoxContainer/Stage1" to="." method="_on_stage_1_mouse_entered"]

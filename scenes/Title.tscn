@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3jwsupfgj28b"]
+[gd_scene load_steps=4 format=3 uid="uid://b3jwsupfgj28b"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_50l2m"]
 [ext_resource type="Theme" uid="uid://baw3uvd2gak5n" path="res://resources/Main.tres" id="2_ovj65"]
+[ext_resource type="AudioStream" uid="uid://c7wqab66emkbu" path="res://resources/audio/sfx/pickupCoin.wav" id="3_nl07u"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -38,6 +39,9 @@ offset_bottom = 423.0
 scale = Vector2(9, 9)
 theme = ExtResource("2_ovj65")
 text = "Start"
+
+[node name="buttonsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nl07u")
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

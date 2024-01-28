@@ -10,6 +10,7 @@ var arcadeAudience = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,1,1,1,1,1,1,1,1,1,
 var churchAudience = [0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,0,0,0]
 
 func _ready():
+	$levelselect.play()
 	stage_description = %StageDescription
 	stage_description.text = "Select a venue!"
 	barAudience.shuffle()
@@ -41,18 +42,21 @@ func _on_stage_4_mouse_exited():
 	stage_description.text = "Select a venue!"
 
 func _on_stage_1_pressed():
+	$levelbutton.play()
 	get_node(".").hide()
 	GlobalState.currentAudience = barAudience
 	GlobalState.currentRivalDeck = Decks.phsyicalRival
 	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
 
 func _on_stage_2_pressed():
+	$levelbutton.play()
 	get_node(".").hide()
 	GlobalState.currentAudience = arcadeAudience
 	GlobalState.currentRivalDeck = Decks.punsPlayerDeck
 	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
 
 func _on_stage_3_pressed():
+	$levelbutton.play()
 	get_node(".").hide()
 	GlobalState.currentAudience = churchAudience
 	GlobalState.currentRivalDeck = Decks.punsRival

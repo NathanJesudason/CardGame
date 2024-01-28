@@ -52,6 +52,10 @@ func _ready():
 	%LastCard3.visible = false
 	%LastCard2.visible = false
 	%LastCard1.visible = false
+	
+	$battleintro.play()
+	await $battleintro.finished
+	$clownbattle.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -126,6 +130,7 @@ func play_card(id: int):
 
 #Play next card, calculate score for rival
 func play_rival_card():
+	$rivalcard.play()
 	#Move Last Played Cards as needed
 	move_card($Stage/LastPlayed/LastCard2, $Stage/LastPlayed/LastCard3)
 	move_card($Stage/LastPlayed/LastCard1, $Stage/LastPlayed/LastCard2)
@@ -160,6 +165,7 @@ func play_rival_card():
 func _on_hand_card_1_gui_input(event):
 	if event is InputEventMouseButton && currentTurnState == turnState.playerTurn:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			$playercard.play()
 			print("Card 1 clicked")
 			play_card(1)
 
@@ -167,6 +173,7 @@ func _on_hand_card_1_gui_input(event):
 func _on_hand_card_2_gui_input(event):
 	if event is InputEventMouseButton && currentTurnState == turnState.playerTurn:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			$playercard.play()
 			print("Card 2 clicked")
 			play_card(2)
 
@@ -174,6 +181,7 @@ func _on_hand_card_2_gui_input(event):
 func _on_hand_card_3_gui_input(event):
 	if event is InputEventMouseButton && currentTurnState == turnState.playerTurn:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			$playercard.play()
 			print("Card 3 clicked")
 			play_card(3)
 
@@ -181,5 +189,6 @@ func _on_hand_card_3_gui_input(event):
 func _on_hand_card_4_gui_input(event):
 	if event is InputEventMouseButton && currentTurnState == turnState.playerTurn:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			$playercard.play()
 			print("Card 4 clicked")
 			play_card(4)
