@@ -4,6 +4,7 @@ extends Node
 
 var currentPlayerDeck
 var currentRivalDeck
+var currentAudience
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

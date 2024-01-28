@@ -1,94 +1,199 @@
-[gd_scene load_steps=4 format=3 uid="uid://b02lg3u2ecntd"]
+[gd_scene load_steps=5 format=3 uid="uid://b02lg3u2ecntd"]
 
 [ext_resource type="Script" path="res://scripts/PlayScene.gd" id="1_1rtgc"]
 [ext_resource type="Texture2D" uid="uid://ujw50nnbgm5i" path="res://resources/sketch_stage.png" id="2_f251t"]
 [ext_resource type="PackedScene" uid="uid://5dcn0pmdlnq5" path="res://scenes/CardTemplate.tscn" id="3_hmgs5"]
+[ext_resource type="PackedScene" uid="uid://bainpk7i352ah" path="res://scenes/audience_member.tscn" id="4_m4ebv"]
 
 [node name="PlayScene" type="Node2D"]
 script = ExtResource("1_1rtgc")
 
-[node name="SketchStage" type="Sprite2D" parent="."]
+[node name="Stage" type="Sprite2D" parent="."]
 position = Vector2(574, 323)
 scale = Vector2(0.71537, 0.71537)
 texture = ExtResource("2_f251t")
 
-[node name="Hand" type="Node2D" parent="."]
+[node name="Hand" type="Node2D" parent="Stage"]
+position = Vector2(-802.382, -451.515)
+scale = Vector2(1.39788, 1.39788)
 
-[node name="HandCard1" parent="Hand" instance=ExtResource("3_hmgs5")]
+[node name="HandCard1" parent="Stage/Hand" instance=ExtResource("3_hmgs5")]
 offset_left = 321.0
 offset_top = 471.0
 offset_right = 445.0
 offset_bottom = 646.0
 
-[node name="HandCard2" parent="Hand" instance=ExtResource("3_hmgs5")]
+[node name="HandCard2" parent="Stage/Hand" instance=ExtResource("3_hmgs5")]
 offset_left = 437.0
 offset_top = 469.0
 offset_right = 561.0
 offset_bottom = 644.0
 
-[node name="HandCard3" parent="Hand" instance=ExtResource("3_hmgs5")]
+[node name="HandCard3" parent="Stage/Hand" instance=ExtResource("3_hmgs5")]
 offset_left = 557.0
 offset_top = 445.0
 offset_right = 681.0
 offset_bottom = 620.0
 
-[node name="HandCard4" parent="Hand" instance=ExtResource("3_hmgs5")]
+[node name="HandCard4" parent="Stage/Hand" instance=ExtResource("3_hmgs5")]
 offset_left = 678.0
 offset_top = 468.0
 offset_right = 802.0
 offset_bottom = 643.0
 
-[node name="LastPlayed" type="Node2D" parent="."]
+[node name="LastPlayed" type="Node2D" parent="Stage"]
+position = Vector2(-802.382, -451.515)
+scale = Vector2(1.39788, 1.39788)
 
-[node name="LastCard3" parent="LastPlayed" instance=ExtResource("3_hmgs5")]
+[node name="LastCard3" parent="Stage/LastPlayed" instance=ExtResource("3_hmgs5")]
 unique_name_in_owner = true
 offset_left = 296.0
 offset_top = 64.0
 offset_right = 420.0
 offset_bottom = 239.0
 
-[node name="LastCard2" parent="LastPlayed" instance=ExtResource("3_hmgs5")]
+[node name="LastCard2" parent="Stage/LastPlayed" instance=ExtResource("3_hmgs5")]
 unique_name_in_owner = true
 offset_left = 431.0
 offset_top = 61.0
 offset_right = 555.0
 offset_bottom = 236.0
 
-[node name="LastCard1" parent="LastPlayed" instance=ExtResource("3_hmgs5")]
+[node name="LastCard1" parent="Stage/LastPlayed" instance=ExtResource("3_hmgs5")]
 unique_name_in_owner = true
 offset_left = 574.0
 offset_top = 62.0
 offset_right = 698.0
 offset_bottom = 237.0
 
-[node name="NextCard" parent="LastPlayed" instance=ExtResource("3_hmgs5")]
+[node name="NextCard" parent="Stage/LastPlayed" instance=ExtResource("3_hmgs5")]
 offset_left = 731.0
 offset_top = 65.0
 offset_right = 855.0
 offset_bottom = 240.0
 
-[node name="PlayerScore" type="Label" parent="."]
-offset_left = 41.0
-offset_top = 27.0
-offset_right = 81.0
-offset_bottom = 50.0
+[node name="PlayerScore" type="Label" parent="Stage"]
+offset_left = -376.029
+offset_top = -438.934
+offset_right = -275.029
+offset_bottom = -412.934
 text = "Your Score: 0"
 
-[node name="RivalScore" type="Label" parent="."]
-offset_left = 41.0
-offset_top = 65.0
-offset_right = 154.0
-offset_bottom = 91.0
+[node name="RivalScore" type="Label" parent="Stage"]
+offset_left = 225.058
+offset_top = -438.934
+offset_right = 338.058
+offset_bottom = -412.934
 text = "Rival Score: 0"
 
-[node name="StageStatus" type="Label" parent="."]
-offset_left = 41.0
-offset_top = 103.0
-offset_right = 154.0
-offset_bottom = 129.0
+[node name="StageStatus" type="Label" parent="Stage"]
+offset_left = -78.2812
+offset_top = -438.934
+offset_right = 34.7188
+offset_bottom = -412.934
 text = "Rounds Left: 5"
 
-[connection signal="gui_input" from="Hand/HandCard1" to="." method="_on_hand_card_1_gui_input"]
-[connection signal="gui_input" from="Hand/HandCard2" to="." method="_on_hand_card_2_gui_input"]
-[connection signal="gui_input" from="Hand/HandCard3" to="." method="_on_hand_card_3_gui_input"]
-[connection signal="gui_input" from="Hand/HandCard4" to="." method="_on_hand_card_4_gui_input"]
+[node name="Audience" type="Node2D" parent="Stage"]
+position = Vector2(-802.382, -451.515)
+scale = Vector2(1.39788, 1.39788)
+
+[node name="AudienceMember" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(351, 277)
+
+[node name="AudienceMember2" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(419, 277)
+
+[node name="AudienceMember3" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(488, 277)
+
+[node name="AudienceMember4" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(557, 277)
+
+[node name="AudienceMember5" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(625, 277)
+
+[node name="AudienceMember6" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(694, 277)
+
+[node name="AudienceMember7" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(763, 277)
+
+[node name="AudienceMember8" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(832, 277)
+
+[node name="AudienceMember9" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(317, 323)
+
+[node name="AudienceMember25" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(317, 414)
+
+[node name="AudienceMember10" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(385, 323)
+
+[node name="AudienceMember26" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(385, 415)
+
+[node name="AudienceMember11" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(454, 323)
+
+[node name="AudienceMember27" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(454, 415)
+
+[node name="AudienceMember12" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(522, 323)
+
+[node name="AudienceMember28" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(522, 415)
+
+[node name="AudienceMember13" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(591, 323)
+
+[node name="AudienceMember29" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(591, 415)
+
+[node name="AudienceMember14" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(660, 323)
+
+[node name="AudienceMember30" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(660, 415)
+
+[node name="AudienceMember15" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(729, 323)
+
+[node name="AudienceMember31" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(729, 420)
+
+[node name="AudienceMember16" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(797, 323)
+
+[node name="AudienceMember32" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(797, 415)
+
+[node name="AudienceMember17" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(351, 369)
+
+[node name="AudienceMember18" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(419, 369)
+
+[node name="AudienceMember19" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(488, 369)
+
+[node name="AudienceMember20" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(557, 369)
+
+[node name="AudienceMember21" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(625, 369)
+
+[node name="AudienceMember22" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(694, 369)
+
+[node name="AudienceMember23" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(763, 369)
+
+[node name="AudienceMember24" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
+position = Vector2(833, 369)
+
+[connection signal="gui_input" from="Stage/Hand/HandCard1" to="." method="_on_hand_card_1_gui_input"]
+[connection signal="gui_input" from="Stage/Hand/HandCard2" to="." method="_on_hand_card_2_gui_input"]
+[connection signal="gui_input" from="Stage/Hand/HandCard3" to="." method="_on_hand_card_3_gui_input"]
+[connection signal="gui_input" from="Stage/Hand/HandCard4" to="." method="_on_hand_card_4_gui_input"]

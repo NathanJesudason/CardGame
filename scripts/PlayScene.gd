@@ -5,6 +5,8 @@ var DeckManager
 
 @onready var GlobalState = get_node("/root/GameState")
 
+@onready var Audience = $Stage/Audience.get_children()
+
 var rivalScore = 0
 var playerScore = 0
 var currentCombo = 0
@@ -26,6 +28,14 @@ var LastCardVisibility = [false, false, false]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var curtains = preload("res://scenes/scene_transition.tscn")
+	var curtainNode = curtains.instantiate()
+	add_child(curtainNode)
+	
+	#Set all 32 audience members
+	print(GlobalState.currentAudience)
+	for member in 32:
+		Audience[member].set_member_type(GlobalState.currentAudience[member])
 	#instantiate deck manager to access nonstatic functions like shuffling
 	DeckManager = Decks.new()
 	print("Selected DECK")
@@ -34,11 +44,11 @@ func _ready():
 	DeckManager.playerDeck = DeckManager.shuffleDeck(DeckManager.selectedDeck)
 	DeckManager.playerDeckSize = DeckManager.playerDeck.size()
 	print(DeckManager.playerDeck)
-	$Hand/HandCard1.set_card(DeckManager.drawCard())
-	$Hand/HandCard2.set_card(DeckManager.drawCard())
-	$Hand/HandCard3.set_card(DeckManager.drawCard())
-	$Hand/HandCard4.set_card(DeckManager.drawCard())
-	$LastPlayed/NextCard.set_card(GlobalState.currentRivalDeck[randi() % GlobalState.currentRivalDeck.size()])
+	$Stage/Hand/HandCard1.set_card(DeckManager.drawCard())
+	$Stage/Hand/HandCard2.set_card(DeckManager.drawCard())
+	$Stage/Hand/HandCard3.set_card(DeckManager.drawCard())
+	$Stage/Hand/HandCard4.set_card(DeckManager.drawCard())
+	$Stage/LastPlayed/NextCard.set_card(GlobalState.currentRivalDeck[randi() % GlobalState.currentRivalDeck.size()])
 	%LastCard3.visible = false
 	%LastCard2.visible = false
 	%LastCard1.visible = false
@@ -64,28 +74,34 @@ func move_card(source: Node, target: Node, clearSource: bool = false):
 
 func play_card(id: int):
 	#Move Last Played Cards as needed
-	move_card($LastPlayed/LastCard2, $LastPlayed/LastCard3)
-	move_card($LastPlayed/LastCard1, $LastPlayed/LastCard2)
-	move_card(get_node("Hand/HandCard" + str(id)), $LastPlayed/LastCard1)
+	move_card($Stage/LastPlayed/LastCard2, $Stage/LastPlayed/LastCard3)
+	move_card($Stage/LastPlayed/LastCard1, $Stage/LastPlayed/LastCard2)
+	move_card(get_node("Stage/Hand/HandCard" + str(id)), $Stage/LastPlayed/LastCard1)
 	
 	DeckManager.playerHandSize -= 1
 	
 	#Move visibility back one
 	for i in 3:
 		if(LastCardVisibility[i] == false):
-			get_node("LastPlayed/LastCard" + str(i + 1)).visible = true
+			get_node("Stage/LastPlayed/LastCard" + str(i + 1)).visible = true
 			LastCardVisibility[i] = true
 			break
 	
+	var selectedCardType = get_node("Stage/Hand/HandCard" + str(id)).cardType
+	
 	#Calculate Score
-	if(lastPlayedCardType == get_node("Hand/HandCard" + str(id)).cardType):
-		currentCombo += 1
+	if(lastPlayedCardType == selectedCardType):
+		currentCombo += 5
 	else:
 		currentCombo = 0
+	
+	var audienceSum = 0
+	for n in 32:
+		audienceSum += Audience[n].card_played(selectedCardType)
 
-	lastPlayedCardType = get_node("Hand/HandCard" + str(id)).cardType
-	playerScore += get_node("Hand/HandCard" + str(id)).pointValue + currentCombo
-	$PlayerScore.text = "Your score: " + str(playerScore)
+	lastPlayedCardType = get_node("Stage/Hand/HandCard" + str(id)).cardType
+	playerScore += get_node("Stage/Hand/HandCard" + str(id)).pointValue + audienceSum + currentCombo
+	$Stage/PlayerScore.text = "Your score: " + str(playerScore)
 	
 	#Replace card in hand based on deck
 	var newCardID = DeckManager.drawCard()
@@ -95,44 +111,46 @@ func play_card(id: int):
 		DeckManager.selectedDeck = GlobalState.currentPlayerDeck.duplicate(true)
 		DeckManager.playerDeck = DeckManager.shuffleDeck(DeckManager.selectedDeck)
 		DeckManager.playerDeckSize = DeckManager.playerDeck.size()
-		get_node("Hand/HandCard" + str(id)).set_card(DeckManager.drawCard())
+		get_node("Stage/Hand/HandCard" + str(id)).set_card(DeckManager.drawCard())
 	else:
-		get_node("Hand/HandCard" + str(id)).set_card(newCardID)
+		get_node("Stage/Hand/HandCard" + str(id)).set_card(newCardID)
 	
 	#end turn 
 	#in the future, we will yield some time for animations while scoring
 	#but for now, turn to enemy
 	currentTurnState = turnState.rivalTurn
 	await get_tree().create_timer(1.0).timeout
+	for n in 32:
+		Audience[n].reset_emote()
 	play_rival_card()
 
 #Play next card, calculate score for rival
 func play_rival_card():
 	#Move Last Played Cards as needed
-	move_card($LastPlayed/LastCard2, $LastPlayed/LastCard3)
-	move_card($LastPlayed/LastCard1, $LastPlayed/LastCard2)
-	move_card($LastPlayed/NextCard, $LastPlayed/LastCard1)
+	move_card($Stage/LastPlayed/LastCard2, $Stage/LastPlayed/LastCard3)
+	move_card($Stage/LastPlayed/LastCard1, $Stage/LastPlayed/LastCard2)
+	move_card($Stage/LastPlayed/NextCard, $Stage/LastPlayed/LastCard1)
 	
 	#Move visibility back one
 	for i in 3:
 		if(LastCardVisibility[i] == false):
-			get_node("LastPlayed/LastCard" + str(i + 1)).visible = true
+			get_node("Stage/LastPlayed/LastCard" + str(i + 1)).visible = true
 			LastCardVisibility[i] = true
 			break
 	
-	rivalScore += $LastPlayed/NextCard.pointValue
-	$RivalScore.text = "Rival score: " + str(rivalScore)
+	rivalScore += $Stage/LastPlayed/NextCard.pointValue
+	$Stage/RivalScore.text = "Rival score: " + str(rivalScore)
 	
-	lastPlayedCardType = $LastPlayed/NextCard.cardType
+	lastPlayedCardType = $Stage/LastPlayed/NextCard.cardType
 	
-	$LastPlayed/NextCard.set_card(GlobalState.currentRivalDeck[randi() % GlobalState.currentRivalDeck.size()])
+	$Stage/LastPlayed/NextCard.set_card(GlobalState.currentRivalDeck[randi() % GlobalState.currentRivalDeck.size()])
 	roundNumber += 1
-	$StageStatus.text = "Rounds Left: " + str(5 - roundNumber)
+	$Stage/StageStatus.text = "Rounds Left: " + str(5 - roundNumber)
 	if(roundNumber == 5):
 		if(playerScore >= rivalScore):
-			$StageStatus.text = "You win!"
+			$Stage/StageStatus.text = "You win!"
 		else:
-			$StageStatus.text = "You lose!"
+			$Stage/StageStatus.text = "You lose!"
 	else:
 		#end turn 
 		#in the future, we will yield some time for animations while scoring

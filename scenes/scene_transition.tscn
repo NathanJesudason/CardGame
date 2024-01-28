@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj5h5nuh7mgoa"]
+[gd_scene load_steps=4 format=3 uid="uid://cj5h5nuh7mgoa"]
+
+[ext_resource type="Script" path="res://scenes/scene_transition.gd" id="1_py4jc"]
 
 [sub_resource type="Animation" id="Animation_tu28s"]
 resource_name = "Curtains"
@@ -38,6 +40,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
+script = ExtResource("1_py4jc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(576, 143)

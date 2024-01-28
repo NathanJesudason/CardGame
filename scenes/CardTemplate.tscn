@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2tqfgvck6pdl" path="res://resources/pixel-cards/card-frame-Slapstick.png" id="2_if0v1"]
 [ext_resource type="FontFile" uid="uid://dmw35ibqh0v47" path="res://resources/Pixelme.ttf" id="2_l53m7"]
 [ext_resource type="Texture2D" uid="uid://dnlq50ntuqneg" path="res://resources/pixel-cards/Slapstick-icon.png" id="4_7ta0o"]
-[ext_resource type="Texture2D" uid="uid://u3yqmgfad8rp" path="res://resources/pixel-cards/card-back.png" id="4_vw5x7"]
+[ext_resource type="Texture2D" uid="uid://btlkwmpidmo32" path="res://resources/pixel-cards/card-back.png" id="4_vw5x7"]
 
 [node name="CardTemplate" type="MarginContainer"]
 offset_right = 125.0
