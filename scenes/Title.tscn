@@ -15,27 +15,26 @@ script = ExtResource("1_50l2m")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(28.72, 16.28)
+offset_right = 1024.0
+offset_bottom = 896.0
 color = Color(0.486275, 0.2, 0.27451, 1)
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 732.0
-offset_top = 400.0
-offset_right = 770.0
-offset_bottom = 423.0
+offset_left = 659.0
+offset_top = 598.0
+offset_right = 697.0
+offset_bottom = 627.0
 scale = Vector2(9, 9)
 theme = ExtResource("2_ovj65")
 text = "Quit"
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 400.0
-offset_right = 70.0
-offset_bottom = 423.0
+offset_left = 14.0
+offset_top = 598.0
+offset_right = 56.0
+offset_bottom = 627.0
 scale = Vector2(9, 9)
 theme = ExtResource("2_ovj65")
 text = "Start"

@@ -57,11 +57,6 @@ func _ready():
 	await $battleintro.finished
 	$clownbattle.play()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func move_card(source: Node, target: Node, clearSource: bool = false):
 	#check if source is a valid card
 	if(!source.cardID):
@@ -120,9 +115,9 @@ func play_card(id: int):
 		get_node("Stage/Hand/HandCard" + str(id)).set_card(newCardID)
 	
 	#end turn 
-	#in the future, we will yield some time for animations while scoring
-	#but for now, turn to enemy
 	currentTurnState = turnState.rivalTurn
+	
+	#reset animations
 	await get_tree().create_timer(1.0).timeout
 	for n in 32:
 		Audience[n].reset_emote()
@@ -143,7 +138,12 @@ func play_rival_card():
 			LastCardVisibility[i] = true
 			break
 	
-	rivalScore += $Stage/LastPlayed/NextCard.pointValue
+	var selectedCardType = $Stage/LastPlayed/NextCard.cardType
+	var audienceSum = 0
+	for n in 32:
+		audienceSum += Audience[n].card_played(selectedCardType)
+	
+	rivalScore += $Stage/LastPlayed/NextCard.pointValue + audienceSum
 	$Stage/RivalScore.text = "Rival score: " + str(rivalScore)
 	
 	lastPlayedCardType = $Stage/LastPlayed/NextCard.cardType
@@ -156,10 +156,12 @@ func play_rival_card():
 			$Stage/StageStatus.text = "You win!"
 		else:
 			$Stage/StageStatus.text = "You lose!"
+		$Continue.visible = true
 	else:
 		#end turn 
-		#in the future, we will yield some time for animations while scoring
-		#but for now, turn to enemy
+		await get_tree().create_timer(1.0).timeout
+		for n in 32:
+			Audience[n].reset_emote()
 		currentTurnState = turnState.playerTurn
 
 func _on_hand_card_1_gui_input(event):
@@ -192,3 +194,7 @@ func _on_hand_card_4_gui_input(event):
 			$playercard.play()
 			print("Card 4 clicked")
 			play_card(4)
+
+
+func _on_continue_pressed():
+	get_tree().change_scene_to_file("res://scenes/level_map.tscn")

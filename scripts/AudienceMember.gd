@@ -8,7 +8,7 @@ enum audience_member_type {
 
 var currentType:audience_member_type
 var restingFrameID
-var colors = [Color(0.7, 0.3, 0.3), Color(0.3, 0.7, 0.3), Color(0.3, 0.3, 0.7)]
+var colors = [Color(0.7, 0.4, 0.4), Color(0.4, 0.7, 0.4), Color(0.4, 0.4, 0.7), Color(0.4, 0.7, 0.7), Color(0.7, 0.4, 0.7)]
 
 func set_member_type(type: audience_member_type):
 	#set frame to be multiple of 3, and then random gender
@@ -24,22 +24,22 @@ func card_played(type: String) -> int:
 	#based on what type of audience member, display the frame reaction and return the score
 	match [type, currentType]:
 		["Slapstick", audience_member_type.kid]:
-			$Sprite2D.frame = restingFrameID + 1
+			$Sprite2D.frame = restingFrameID + (1 * (randi() % 2)) 
 			return 2
 		["Slapstick", audience_member_type.nerd]:
-			$Sprite2D.frame = restingFrameID + 2
+			$Sprite2D.frame = restingFrameID + (2 * (randi() % 2)) 
 			return 0
 		["Wordplay", audience_member_type.nerd]:
-			$Sprite2D.frame = restingFrameID + 1
+			$Sprite2D.frame = restingFrameID + (1 * (randi() % 2))
 			return 2
 		["Wordplay", audience_member_type.old]:
-			$Sprite2D.frame = restingFrameID + 2
+			$Sprite2D.frame = restingFrameID + (2 * (randi() % 2)) 
 			return 0
 		["Observational", audience_member_type.old]:
-			$Sprite2D.frame = restingFrameID + 1
+			$Sprite2D.frame = restingFrameID + (1 * (randi() % 2))
 			return 2
 		["Observational", audience_member_type.kid]:
-			$Sprite2D.frame = restingFrameID + 2
+			$Sprite2D.frame = restingFrameID + (2 * (randi() % 2)) 
 			return 0
 		_:
 			return 1

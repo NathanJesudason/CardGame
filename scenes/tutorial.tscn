@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://ls2gdbxudu3g"]
+
+[ext_resource type="Texture2D" uid="uid://dpkw10q00qypm" path="res://resources/Screen_Shot_2024-01-27_at_20.55.23.png" id="1_4ucxf"]
+[ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_avfks"]
+[ext_resource type="Texture2D" uid="uid://p5nvrfth7rpt" path="res://resources/Untitled.png" id="3_6vl2x"]
+[ext_resource type="PackedScene" uid="uid://5dcn0pmdlnq5" path="res://scenes/CardTemplate.tscn" id="4_ybfno"]
+
+[sub_resource type="Animation" id="Animation_hv6o1"]
+resource_name = "Card_Slide_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CardTemplate:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-274, 192), Vector2(405, 192)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Professor:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ge3nw"]
+_data = {
+"Card_Slide_in": SubResource("Animation_hv6o1")
+}
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_avfks")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 896.0
+
+[node name="Professor" type="Sprite2D" parent="."]
+position = Vector2(467, 331)
+texture = ExtResource("1_4ucxf")
+
+[node name="Untitled" type="Sprite2D" parent="."]
+position = Vector2(497, 681)
+texture = ExtResource("3_6vl2x")
+
+[node name="Label" type="Label" parent="Untitled"]
+offset_left = -367.0
+offset_top = -138.0
+offset_right = 371.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 44
+text = "Hello There!
+Welcome to the world of jokes!"
+autowrap_mode = 3
+
+[node name="CardTemplate" parent="." instance=ExtResource("4_ybfno")]
+offset_left = -269.0
+offset_top = 192.0
+offset_right = -142.0
+offset_bottom = 367.0
+scale = Vector2(1.88, 1.88)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ge3nw")
+}

@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://nayv0o1ubjkn"
-path="res://.godot/imported/bg-venue-1.png-32da674879f3a33eb725cc76f2cf7da7.ctex"
+uid="uid://bf6cx4i5uun48"
+path="res://.godot/imported/bg-venue.png-ab23bffaad25243c11552497dccf8eb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/pixel-cards/bg-venue-1.png"
-dest_files=["res://.godot/imported/bg-venue-1.png-32da674879f3a33eb725cc76f2cf7da7.ctex"]
+source_file="res://resources/bg-venue.png"
+dest_files=["res://.godot/imported/bg-venue.png-ab23bffaad25243c11552497dccf8eb9.ctex"]
 
 [params]
 
