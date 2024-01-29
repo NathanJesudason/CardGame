@@ -7,7 +7,7 @@ const section_time := 2.0
 const line_time := 0.3
 const base_speed := 100
 const speed_up_multiplier := 10.0
-const title_color := Color.DARK_RED
+const title_color := Color.CRIMSON
 
 # var scroll_speed := base_speed
 var speed_up := false
