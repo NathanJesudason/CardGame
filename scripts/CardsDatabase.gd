@@ -20,21 +20,21 @@ const DATABASE = {
 		"cardType": "Slapstick",
 		"typeText": "Slapstick",
 		"cardName": "Banana Peel",
-		"jokeText": "I personally prefer\nred shells.",
+		"jokeText": "I personally prefer red shells.",
 		"pointValue": 1		
 	},
 	3	: {
 		"cardType": "Slapstick",
 		"typeText": "Slapstick",
 		"cardName": "Eyepoke",
-		"jokeText": "Sample Joke Text",
+		"jokeText": "The least favorite joke of every pirate.",
 		"pointValue": 2		
 	},
 	4	: {
 		"cardType": "Slapstick",
 		"typeText": "Slapstick",
 		"cardName": "Fish Slap",
-		"jokeText": "Sample Joke Text",
+		"jokeText": "Giving carpal tunnel a brand new meaning.",
 		"pointValue": 2		
 	},
 	5	: {
@@ -48,28 +48,28 @@ const DATABASE = {
 		"cardType": "Slapstick",
 		"typeText": "Slapstick",
 		"cardName": "Hit Head on Doorway",
-		"jokeText": "Sample Joke Text",
+		"jokeText": "Objects may be shorter than they appear.",
 		"pointValue": 3		
 	},
 	7	: {
 		"cardType": "Slapstick",
 		"typeText": "Slapstick",
 		"cardName": "Mime Stuck In Box",
-		"jokeText": "Sample Joke Text",
+		"jokeText": "One day he'll learn to keep the keys in his pocket.",
 		"pointValue": 4		
 	},
 	8	: {
 		"cardType": "Slapstick",
 		"typeText": "Slapstick",
 		"cardName": "Fall Through Table",
-		"jokeText": "Bah gawd he's\nbroken in half!",
+		"jokeText": "Bah gawd he's broken in half!",
 		"pointValue": 4		
 	},
 	9	: {
 		"cardType": "Slapstick",
 		"typeText": "Slapstick",
 		"cardName": "Slime Time Live!",
-		"jokeText": "I wonder what\nOlmec is up\nto these days.",
+		"jokeText": "I wonder what Olmec is up to these days.",
 		"pointValue": 5		
 	},
 	10	: {
@@ -83,140 +83,140 @@ const DATABASE = {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "My Hero",
-		"jokeText": "To the guy who\ninvented zero,thanks\nfor nothing.",
+		"jokeText": "To the guy who invented zero,thanks for nothing.",
 		"pointValue": 1		
 	},
 	12	: {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "Napa Valley",
-		"jokeText": "What did the grape\nsay when it got\ncrushed?\nNothing, it just let\nout a little wine.",
+		"jokeText": "What did the grape say when it got crushed? Nothing, it just let out a little wine.",
 		"pointValue": 1		
 	},
 	13	: {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "Positivity",
-		"jokeText": "I lost my mood\nring and I don't know\nhow to feel about it!",
+		"jokeText": "I lost my mood ring and I don't know how to feel about it!",
 		"pointValue": 2		
 	},
 	14	: {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "Mounting Suspicion",
-		"jokeText": "I don’t trust\nstairs because they’re\nalways up to something.",
+		"jokeText": "I don’t trust stairs because they’re always up to something.",
 		"pointValue": 2	
 	},
 	15	: {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "Perspective",
-		"jokeText": "I was wondering why\nthe ball was getting\nbigger. Then it\nhit me.",
+		"jokeText": "I was wondering why the ball was getting bigger. Then it hit me.",
 		"pointValue": 3		
 	},
 	16	: {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "The Fates",
-		"jokeText": "The past, the\npresent, and the\nfuture walk into\na bar. It was\ntense!",
+		"jokeText": "The past, the present, and the future walk into a bar. It was tense!",
 		"pointValue": 3		
 	},
 	17	: {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "They're Everywhere",
-		"jokeText": "Never trust an atom,\nthey make up everything!",
+		"jokeText": "Never trust an atom, they make up everything!",
 		"pointValue": 4		
 	},
 	18	: {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "Fowl Play",
-		"jokeText": "What do you call the\nghost of a chicken?\nA poultry-geist.",
+		"jokeText": "What do you call the ghost of a chicken? A poultry-geist.",
 		"pointValue": 4		
 	},
 	19	: {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "Thyme",
-		"jokeText": "What does a clock\ndo when it's hungry?\nIt goes back\nfor seconds.",
+		"jokeText": "What does a clock do when it's hungry? It goes back for seconds.",
 		"pointValue": 5		
 	},
 	20	: {
 		"cardType": "Wordplay",
 		"typeText": "Wordplay",
 		"cardName": "Limitless",
-		"jokeText": "Never discuss infinity\nwith a mathematician,\nthey can go on\nabout it forever.",
+		"jokeText": "Never discuss infinity with a mathematician, they can go on about it forever.",
 		"pointValue": 5		
 	},
 	21	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Brick House",
-		"jokeText": "I have a lot\nof growing up to\ndo. I realised that\nthe other day inside\nmy fort",
+		"jokeText": "I have a lot of growing up to do. I realised that the other day inside my fort.",
 		"pointValue": 1		
 	},
 	22	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Perfect Coverage",
-		"jokeText": "Do Transformers\nget car, or life\ninsurance?",
+		"jokeText": "Do Transformers get car, or life insurance?",
 		"pointValue": 1		
 	},
 	23	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Seussical",
-		"jokeText": "Two fish in a tank.\nOne says: ‘How do you\ndrive this thing?",
+		"jokeText": "Two fish in a tank. One says: ‘How do you drive this thing?",
 		"pointValue": 2		
 	},
 	24	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Recycle",
-		"jokeText": "I like an escalator\nbecause it can never break.\nIt can only become stairs.",
+		"jokeText": "I like an escalator because it can never break. It can only become stairs.",
 		"pointValue": 2		
 	},
 	25	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Maritime",
-		"jokeText": "I saw a documentary on\nhow ships are kept\ntogether. Riveting!",
+		"jokeText": "I saw a documentary on how ships are kept together. Riveting!",
 		"pointValue": 3		
 	},
 	26	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Stealth",
-		"jokeText": "I went to buy\ncamouflage trousers but\nI couldn’t find any",
+		"jokeText": "I went to buy camouflage trousers but I couldn’t find any.",
 		"pointValue": 3		
 	},
 	27	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Beep Boops",
-		"jokeText": "I would imagine that\nif you could understand\nMorse code, a\ntap dancer would\ndrive you crazy.",
+		"jokeText": "I would imagine that if you could understand Morse code, a tap dancer would drive you crazy.",
 		"pointValue": 4		
 	},
 	28	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Broken Bonez",
-		"jokeText": "The easiest time to add\ninsult to injury is when you’re\nsigning somebody’s\ncast.",
+		"jokeText": "The easiest time to add insult to injury is when you’re signing somebody’s cast.",
 		"pointValue": 4		
 	},
 	29	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Honey Trap",
-		"jokeText": "A waffle is like\na pancake with a\nsyrup trap.",
+		"jokeText": "A waffle is like a pancake with a syrup trap.",
 		"pointValue": 5		
 	},
 	30	: {
 		"cardType": "Observational",
 		"typeText": "Observational",
 		"cardName": "Stalwart Defense",
-		"jokeText": "The depressing thing about\ntennis is that no\nmatter how good I get,\nI’ll never be as good\nas a wall",
+		"jokeText": "The depressing thing about tennis is that no matter how good I get, I’ll never be as good as a wall.",
 		"pointValue": 5	
 	},
 	
