@@ -121,6 +121,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="JokeLabel" type="Label" parent="Bars/JokeBar/JokeText/CenterContainer"]
+custom_minimum_size = Vector2(97, 22)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
@@ -128,6 +129,7 @@ theme_override_fonts/font = ExtResource("2_l53m7")
 theme_override_font_sizes/font_size = 8
 text = "This is the funniest joke
 text you have ever seen"
+autowrap_mode = 3
 
 [node name="RigthtGap" type="MarginContainer" parent="Bars/JokeBar"]
 custom_minimum_size = Vector2(11, 0)
