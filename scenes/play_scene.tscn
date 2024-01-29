@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bf6cx4i5uun48" path="res://resources/bg-venue.png" id="2_i6d0c"]
 [ext_resource type="PackedScene" uid="uid://5dcn0pmdlnq5" path="res://scenes/CardTemplate.tscn" id="3_hmgs5"]
 [ext_resource type="PackedScene" uid="uid://bainpk7i352ah" path="res://scenes/audience_member.tscn" id="4_m4ebv"]
-
 [ext_resource type="Theme" uid="uid://baw3uvd2gak5n" path="res://resources/Main.tres" id="5_3nabk"]
 [ext_resource type="AudioStream" uid="uid://busqpagjqlv0o" path="res://resources/audio/Music/clownintroMIXED.wav" id="5_km3hp"]
 [ext_resource type="AudioStream" uid="uid://hlkilotqe5xu" path="res://resources/audio/Music/clownbattle_nointroMIXED.wav" id="6_4si8r"]
@@ -174,18 +173,6 @@ position = Vector2(763, 369)
 [node name="AudienceMember24" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(833, 369)
 
-[node name="battleintro" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_km3hp")
-
-[node name="clownbattle" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_4si8r")
-
-[node name="playercard" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_js5xe")
-
-[node name="rivalcard" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_bqjee")
-
 [node name="AudienceMember31" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(729, 415)
 
@@ -210,6 +197,18 @@ position = Vector2(385, 415)
 [node name="AudienceMember25" parent="Stage/Audience" instance=ExtResource("4_m4ebv")]
 position = Vector2(317, 414)
 
+[node name="battleintro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_km3hp")
+
+[node name="clownbattle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4si8r")
+
+[node name="playercard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_js5xe")
+
+[node name="rivalcard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bqjee")
+
 [node name="Continue" type="Button" parent="."]
 visible = false
 offset_left = 720.0
@@ -220,19 +219,19 @@ theme = ExtResource("5_3nabk")
 theme_override_font_sizes/font_size = 40
 text = "Continue →"
 
-[node name="battleintro" type="AudioStreamPlayer" parent="."]
+[node name="battleintro2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_km3hp")
 volume_db = -10.0
 
-[node name="clownbattle" type="AudioStreamPlayer" parent="."]
+[node name="clownbattle2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_4si8r")
 volume_db = -10.0
 
-[node name="playercard" type="AudioStreamPlayer" parent="."]
+[node name="playercard2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_js5xe")
 volume_db = -10.0
 
-[node name="rivalcard" type="AudioStreamPlayer" parent="."]
+[node name="rivalcard2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_bqjee")
 volume_db = -10.0
 

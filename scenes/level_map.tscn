@@ -1,5 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpljxv55ms5cy"]
-
+[gd_scene load_steps=7 format=3 uid="uid://cpljxv55ms5cy"]
 
 [ext_resource type="Script" path="res://scripts/level_map.gd" id="1_2mbpv"]
 [ext_resource type="Theme" uid="uid://baw3uvd2gak5n" path="res://resources/Main.tres" id="1_anfl0"]
@@ -12,7 +11,6 @@
 script = ExtResource("1_2mbpv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-
 offset_right = 1024.0
 offset_bottom = 896.0
 color = Color(0.607843, 0, 0.0784314, 1)
@@ -130,7 +128,6 @@ disabled = true
 [node name="levelselect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_eri6f")
 
-
 [node name="Master" type="HSlider" parent="."]
 offset_left = 699.0
 offset_top = 595.0
@@ -148,7 +145,6 @@ offset_top = -31.0
 offset_right = 225.0
 offset_bottom = -5.0
 text = "VOLUME"
-volume_db = -10.0
 
 [node name="levelbutton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_6f6yq")
