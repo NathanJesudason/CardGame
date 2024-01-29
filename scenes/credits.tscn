@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwlrbulq0iik8"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_r3px5"]
+[ext_resource type="Texture2D" uid="uid://bf6cx4i5uun48" path="res://resources/bg-venue.png" id="2_mfge4"]
+[ext_resource type="FontFile" uid="uid://dmw35ibqh0v47" path="res://resources/Pixelme.ttf" id="3_6jdym"]
+[ext_resource type="Texture2D" uid="uid://cjims7l7xygf1" path="res://resources/bg-venue-bottom.png" id="4_rlbip"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_r3px5")
+
+[node name="CreditsContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1024.0
+offset_bottom = 896.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FullBG" type="Sprite2D" parent="CreditsContainer"]
+texture = ExtResource("2_mfge4")
+centered = false
+
+[node name="Line" type="Label" parent="CreditsContainer"]
+custom_minimum_size = Vector2(1024, 0)
+offset_left = -1.0
+offset_top = 633.0
+offset_right = 1023.0
+offset_bottom = 671.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6jdym")
+theme_override_font_sizes/font_size = 34
+text = "Credits Line"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BGBottom" type="Sprite2D" parent="CreditsContainer"]
+position = Vector2(0, 627)
+texture = ExtResource("4_rlbip")
+centered = false
