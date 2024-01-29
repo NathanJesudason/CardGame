@@ -129,9 +129,9 @@ disabled = true
 stream = ExtResource("4_eri6f")
 
 [node name="Master" type="HSlider" parent="."]
-offset_left = 699.0
+offset_left = 601.0
 offset_top = 595.0
-offset_right = 1099.0
+offset_right = 1001.0
 offset_bottom = 611.0
 max_value = 1.0
 step = 0.05

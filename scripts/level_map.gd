@@ -46,6 +46,7 @@ func _on_stage_1_pressed():
 	get_node(".").hide()
 	GlobalState.currentAudience = barAudience
 	GlobalState.currentRivalDeck = Decks.phsyicalRival
+	GlobalState.currentRival = GlobalState.Rivals.Joker
 	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
 
 func _on_stage_2_pressed():
@@ -53,6 +54,7 @@ func _on_stage_2_pressed():
 	get_node(".").hide()
 	GlobalState.currentAudience = arcadeAudience
 	GlobalState.currentRivalDeck = Decks.punsPlayerDeck
+	GlobalState.currentRival = GlobalState.Rivals.Batman
 	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
 
 func _on_stage_3_pressed():
@@ -60,6 +62,7 @@ func _on_stage_3_pressed():
 	get_node(".").hide()
 	GlobalState.currentAudience = churchAudience
 	GlobalState.currentRivalDeck = Decks.punsRival
+	GlobalState.currentRival = GlobalState.Rivals.SisterPython
 	get_tree().change_scene_to_file("res://scenes/play_scene.tscn")
 
 func _on_option_button_item_selected(index):

@@ -26,11 +26,22 @@ var currentTurnState = turnState.playerTurn
 
 var LastCardVisibility = [false, false, false]
 
+func set_rival_sprite(i):
+	match i:
+		GlobalState.Rivals.SisterPython:
+			$RivalComedian.frame = 2
+		GlobalState.Rivals.Batman:
+			$RivalComedian.frame = 3
+		GlobalState.Rivals.Joker:
+			$RivalComedian.frame = 7
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var curtains = preload("res://scenes/scene_transition.tscn")
 	var curtainNode = curtains.instantiate()
 	add_child(curtainNode)
+	
+	set_rival_sprite(GlobalState.currentRival)
 	
 	#Set all 32 audience members
 	print(GlobalState.currentAudience)

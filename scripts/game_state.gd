@@ -2,7 +2,14 @@ extends Node
 
 @onready var Decks = preload("res://scripts/DeckManager.gd")
 
+enum Rivals {
+	SisterPython,
+	Batman,
+	Joker
+} 
+
 var currentPlayerDeck
+var currentRival: Rivals
 var currentRivalDeck
 var currentAudience
 

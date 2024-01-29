@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b02lg3u2ecntd"]
+[gd_scene load_steps=11 format=3 uid="uid://b02lg3u2ecntd"]
 
 [ext_resource type="Script" path="res://scripts/PlayScene.gd" id="1_1rtgc"]
 [ext_resource type="Texture2D" uid="uid://bf6cx4i5uun48" path="res://resources/bg-venue.png" id="2_i6d0c"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://hlkilotqe5xu" path="res://resources/audio/Music/clownbattle_nointroMIXED.wav" id="6_4si8r"]
 [ext_resource type="AudioStream" uid="uid://cvxi0lgsa8vw7" path="res://resources/audio/sfx/click.wav" id="7_js5xe"]
 [ext_resource type="AudioStream" uid="uid://ctg8jhdp31ybr" path="res://resources/audio/sfx/hitHurt.wav" id="8_bqjee"]
+[ext_resource type="Texture2D" uid="uid://df8lhl2pjufci" path="res://resources/pixel-cards/characters.png" id="10_rgcyt"]
 
 [node name="PlayScene" type="Node2D"]
 script = ExtResource("1_1rtgc")
@@ -234,6 +235,21 @@ volume_db = -10.0
 [node name="rivalcard2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_bqjee")
 volume_db = -10.0
+
+[node name="BashMustard" type="Sprite2D" parent="."]
+position = Vector2(97, 727)
+scale = Vector2(3, 3)
+texture = ExtResource("10_rgcyt")
+hframes = 4
+vframes = 2
+
+[node name="RivalComedian" type="Sprite2D" parent="."]
+position = Vector2(927, 733)
+scale = Vector2(3, 3)
+texture = ExtResource("10_rgcyt")
+hframes = 4
+vframes = 2
+frame = 7
 
 [connection signal="gui_input" from="Stage/Hand/HandCard1" to="." method="_on_hand_card_1_gui_input"]
 [connection signal="gui_input" from="Stage/Hand/HandCard2" to="." method="_on_hand_card_2_gui_input"]

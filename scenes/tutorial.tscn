@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ls2gdbxudu3g"]
 
-[ext_resource type="Texture2D" uid="uid://dpkw10q00qypm" path="res://resources/Screen_Shot_2024-01-27_at_20.55.23.png" id="1_4ucxf"]
 [ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_avfks"]
+[ext_resource type="Texture2D" uid="uid://df8lhl2pjufci" path="res://resources/pixel-cards/characters.png" id="2_3fdig"]
 [ext_resource type="Texture2D" uid="uid://p5nvrfth7rpt" path="res://resources/Untitled.png" id="3_6vl2x"]
 [ext_resource type="PackedScene" uid="uid://5dcn0pmdlnq5" path="res://scenes/CardTemplate.tscn" id="4_ybfno"]
 
@@ -46,7 +46,11 @@ offset_bottom = 896.0
 
 [node name="Professor" type="Sprite2D" parent="."]
 position = Vector2(467, 331)
-texture = ExtResource("1_4ucxf")
+scale = Vector2(6.92, 6.92)
+texture = ExtResource("2_3fdig")
+hframes = 4
+vframes = 2
+frame = 1
 
 [node name="Untitled" type="Sprite2D" parent="."]
 position = Vector2(497, 681)
